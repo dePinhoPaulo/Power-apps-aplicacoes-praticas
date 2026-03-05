@@ -1,0 +1,32 @@
+AULA_1: O que é e para o que serve o Power Apps
+
+    Construir aplicativos (Empresariais) em low code;
+    Faz parte do Microsoft 365;
+    Contruido para ser intuitivo.
+
+
+AULA_2: Como criar uma conta no Power Apps
+
+    Contas Empresariais e Pessoais:
+        Basta ter uma conta no Microsoft 365;
+        ou
+        PLano de Desenvolver Power App
+
+
+AULA_3: Ambiente Power Apps
+
+    Pagina de criação:
+        Opções de conexão:
+            SharePoint;
+            SQL;
+            Dataverse;
+            Excel;
+    Pagina de documentação;
+    Pagina de aplicativos (criados);
+
+
+AULA_4: Tipos de Aplicativos
+
+    Aplicativos:
+        Aplicativos de tela em branco: Aplicativo real com funcionalidades do CRUD
+        Site do Power Pages: Paginas de visualização somente
