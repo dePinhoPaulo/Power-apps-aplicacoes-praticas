@@ -30,3 +30,57 @@ AULA_4: Tipos de Aplicativos
     Aplicativos:
         Aplicativos de tela em branco: Aplicativo real com funcionalidades do CRUD
         Site do Power Pages: Paginas de visualização somente
+
+
+AULA_5: Telas e Temas
+
+    Criação:
+        Nova tela;
+        Renomar telas e elementos;
+        Inserir > Rotulo de texto:
+            Texto estatico na tela;
+        Temas.
+
+
+AULA_6: Propriedades dos Objetos
+
+    Edição de elementos:
+        Posição, Tamanho;
+        Cor, Borda;
+        Cor ao foclizar, Desabilitado, ao Clicar;
+        Cada elemto tem suas Opções de Propriedades.
+    
+    Modo de visualiação em produção:
+        Visualizar o Aplicativo (F5)
+
+
+AULA_7: Entradas
+
+    Botão;
+    Entrada a centa;
+    Entrada suspensa, caixa de combinação, caixa de listagem:
+        Menu suspenso on um é de seleção unica e o outro de seleção multipla;
+        Trazer lista de seleção de outras fontes de dados;
+    Seletor de data;
+    Radio, Caixa de seleção;
+    Controle deslizante;
+    Altenar;
+    Classificação;
+
+
+AULA_8:  Ferramentas de Layout
+
+    Galerias:
+        Trazer informações da sua base para o app;
+        Ajuste do layout da apresentação desses dados;
+    
+    Tabela de dados:
+        Trazer os dados da fonte em formato de tabela;
+        Com algumas opções de formatação das colunas;
+
+
+AULA_9: Formas e Ícones
+
+    Icones para ilustração do app;
+    Formas geometricas;
+    Ambos com opções de edição do estilo;
