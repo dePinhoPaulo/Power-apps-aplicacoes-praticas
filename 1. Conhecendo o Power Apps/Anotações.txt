@@ -84,3 +84,45 @@ AULA_9: Formas e Ícones
     Icones para ilustração do app;
     Formas geometricas;
     Ambos com opções de edição do estilo;
+
+
+AULA_10: Mídia
+
+    Ferramentas de entrada de midia:
+        Entrada de imagem;
+        Camera;
+        Escanner de codigo de barras;
+        Audio;
+        Microfone;
+        Video;
+
+
+AULA_11: Gráficos
+
+    Trazer dados da base com analises:
+        Grafico de linhas;
+        Grafico de colunas;
+        Grafico de barras;
+
+
+AULA_12: Conectando Excel ao App
+
+    Adicionar dados>
+        Selecionar conector excel;
+        Planilha salva localmente;
+        Planilha deve ser formatada como tabela;
+
+        SharePoint;
+        
+
+AULA_13: Conectando Sharepoint ao App
+
+    Criando base de dados com SharePoint:
+        Lista;
+        Cadastrar colunas da base;
+        Cadastrar dados;
+    
+    Adicionar dados:
+        SharePoint;
+        Url do site;
+
