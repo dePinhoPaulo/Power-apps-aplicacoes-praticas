@@ -126,3 +126,50 @@ AULA_13: Conectando Sharepoint ao App
         SharePoint;
         Url do site;
 
+
+AULA_14: Conectores (exemplo Gmail)
+
+    Documentação da lista de conectores:
+        https://learn.microsoft.com/en-us/connectors/connector-reference/connector-reference-powerapps-connectors
+    
+    Envio de Emial apartir de um botão:
+        Adcionar conector do Gmail;
+        Inserir > Botão:
+            Onselect;
+        Fórmula:
+            Gmail.SendEmailV2("endereço"; {Subject: "abc"; Body: "abc"});
+        
+
+AULA_15: Orientação a Objetos e Manipulação de Entradas
+
+    Enviar Email apartir de uma caixa de texto (desitiantario), e botão:
+        Inserir:
+            Caixa de texto;
+            Botão;
+        Formula Botão:
+            Gmail.SendEmailV2(caixa_texto.Text; {Subject: "abc"; Body: "abc"});
+        
+    Vincular Rotulo de texto a caixa de texto:
+        Inserir:
+            Rotulo de texto;
+        Propriedades:
+            Texto: caixa_texto.Text
+
+
+AULA_16: Como publicar e abrir o App no seu celular
+
+    Publicar;
+    Baixar Power Apps no celular:
+        Login;
+        Abrir app;
+
+
+AULA_17: Funções de Texto
+
+    Funções:
+        Right(texto; num_caracteres) "retorna os caracteres da direita";
+        Left(texto; num_caracteres) "retorna os caracteres da esquerda";
+        Len(texto) "Quantidade de caracteres";
+        Replace(texto; posi_inicio; posi_fim; texto_novo) "Subtitui trecho de caracteres";
+        Dentre outras funções, verificar documentação.
+
