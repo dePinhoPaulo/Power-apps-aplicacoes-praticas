@@ -173,3 +173,28 @@ AULA_17: Funções de Texto
         Replace(texto; posi_inicio; posi_fim; texto_novo) "Subtitui trecho de caracteres";
         Dentre outras funções, verificar documentação.
 
+
+AULA_18: Funções Lógicas
+
+    Funções:
+        If(teste_logico; texto_verdadeiro; texto_falso) "Retorna valor se teste for falso ou verdadeiro";
+        And(formula1; formula2 ; ...) 
+        Or(formula1; formula2 ; ...) 
+        Not(formula) 
+ 
+AULA_19: Funções Matemáticas e de Tabela
+
+    Funções:
+        Round(numero; digitos_arredondar) "Areedondar"
+        Operadores matematicos;
+        Max, Min;
+        Average;
+        Sum;
+        CountRows;
+
+
+AULA_20: Funções Patch, Values e Notify
+
+    Patch(base_dados; {chave_base: valor_campo_app}) "Função que insere dados de app na base de dados";
+    Values(texto) "Convert texto em numero"
+    Notify(texto) "Alerta com menssagem para usuario"
