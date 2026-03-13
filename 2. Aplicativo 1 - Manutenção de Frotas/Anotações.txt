@@ -1,0 +1,40 @@
+AULA_1: Apresentação do App
+
+    App de vistoria de frota:
+        Tela inicial, Boas vindas;
+        Tela de veiculos;
+        Tela de cadastro de vistoria;
+
+
+AULA_2: Construindo Tela Inicial
+
+    Tela para celular;
+    Tela inicial:
+        Tema escuro;
+        Rotulo - Nome app;
+        Imagem de fundo;
+            Circulo para moldura;
+        Rotulo - Menssagem boas vindas;
+        Rotulo - identificar usuario:
+            Formula: User().FullName
+        Botão - Acessar frota:
+            Formula: Navegate(prox_pagina)
+            Raio borda: 50 "Areedondar"
+
+
+AULA_3: Criando Site no Sharepoint
+
+    Criar no site, SharePoint:
+        Adcionar membros;
+        Adicionar listas;
+
+
+AULA_4: Lista de Veículos no Sharepoint
+
+    Novo:
+        Lista;
+        Nome lista;
+        Criar colunas:
+            Nome;
+            Tipo dos valores;
+    
