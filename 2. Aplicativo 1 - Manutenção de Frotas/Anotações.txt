@@ -37,4 +37,29 @@ AULA_4: Lista de Veículos no Sharepoint
         Criar colunas:
             Nome;
             Tipo dos valores;
-    
+
+
+AULA_5: Lista de Vistorias no Sharepoint
+
+    Criando lista de Vistorias:
+        Mesmos passos da aula anterior.
+
+
+AULA_6: Galeria de Veículos
+
+    Exibir informações do banco na tela:
+        Galeria:
+            Fonte de dados (Conctar base);
+            Editar campos (Selecionar colunas);
+            Editar imagens po tipo do veiculo:
+                Selecionar imagens da galeira;
+                Função: If(ThisItem.Tipo_veiculo = 'Caminhão'; img_caminhão; img_van)
+
+
+AULA_7: Destacando Veículos Defeituosos
+
+    Exibir imagem de manutem na galeria:
+        Arrastar imagem na galeira;
+        Redimensionar;
+        Tipo Função: Visible
+        Função: If(ThisItem.status = 'Não Apto'; True; False)
