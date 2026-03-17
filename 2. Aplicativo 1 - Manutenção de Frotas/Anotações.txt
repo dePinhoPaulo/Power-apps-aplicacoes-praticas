@@ -63,3 +63,59 @@ AULA_7: Destacando Veículos Defeituosos
         Redimensionar;
         Tipo Função: Visible
         Função: If(ThisItem.status = 'Não Apto'; True; False)
+
+
+AULA_9: Tela de Vistoria
+
+    Tela de Vistoria:
+        Mesmo Tema;
+        Rotulo - Titulo;
+        Inserir:
+            Entrada:
+                Suspenso - Coluna Placa;
+            Rotulo de texto:
+                Modelo do veiculo - DropDwon1.Selected.Modelo;
+            Imagem:
+                If(DropDwon1.Selected.Tipo_veiculo = 'Caminhão'; img_caminhão; img_van)
+            Para cada item da veistoria:
+                Retolo com cabeçalho;
+                Alternar - Apto / Não Apto
+            Entrade de texto;
+            Botão:
+                para inserir;
+
+
+AULA_10: Salvando dados no Sharepoint a partir do App
+
+    Botão para inserir dados:
+        Função: Patch(Vistorias; Defaults(Vistorias); 
+                    {Placa: DropDwon1.Selected.placa;
+                    Elétrica: Toogle1.value;
+                    Iluminação: Toogle2.value;
+                    Motor: Toogle3.value;
+                    Freios: Toogle4.value;
+                    Pneus: Toogle5.value;
+                    Observações: txt_obeserv.text}
+                );;
+
+                Notify('Vistoria adicionada com sucesso!')
+
+
+AULA_11: Atualizando lista de veículos pelo App
+
+    Continuação da função, para atualizar a lista de veiuclos:
+        Função: Patch(Vistorias; Defaults(Vistorias); 
+                    {Placa: DropDwon1.Selected.placa;
+                    Elétrica: Toogle1.value;
+                    Iluminação: Toogle2.value;
+                    Motor: Toogle3.value;
+                    Freios: Toogle4.value;
+                    Pneus: Toogle5.value;
+                    Observações: txt_obeserv.text}
+                );;
+
+                Patch(Veiculos; LookUp(Veiculos; Placa = DropDwon1.Selected.placa); 
+                    {Status: If(Toogle1.value && Toogle2.value && Toogle3.value && Toogle4.value && Toogle5.value - True; 'Apto'; 'Não Apto)}
+                );;
+
+                Notify('Vistoria adicionada com sucesso!')
