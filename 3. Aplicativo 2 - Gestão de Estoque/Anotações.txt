@@ -1,0 +1,41 @@
+AULA_1: Apresentação do App
+
+    App de gestão de estoque:
+        Registrar Produtos;
+        Registrar entradas e saidas;
+        Relatorio;
+        Relatar Problemas;
+
+
+AULA_2: Tema e Tela Inicial
+
+    Novo aplicativo:
+        Nome;
+        Nova Tela (tela inicial):
+            Selecionar Tema;
+            Botão: Cadastrar Produto;
+                Formula: Navigate(Tela_Cadastrar Produto)
+            Botão: Movimentação de Estoque;
+                Formula: Navigate(Tela_Movimentação de Estoque)
+            Botão: Relatório Estoque;
+                Formula: Navigate(Tela_Relatório Estoque)
+            Botão: Relatar Problemas;
+                Formula: Navigate(Tela_Relatar Problemas)
+            *Adcionar icones aos botões;
+        Criar outras telas (referente a cada botão):
+            Adcionar Botão de voltar em cada tela
+                Formula: Navigate(Tela_inicial)
+
+
+AULA_3: Criando Sharepoint
+
+    Criar site:
+        Nova lista (Produtos):
+            ID, Nome, Qauntidade_estoque, Foto
+        lista Movimentações:
+            ID_produto, Quantidade, Tipo_movimentação
+        lista Problemas:
+            Aberto_por, Responsavel, Hora, Descrição
+
+
+
