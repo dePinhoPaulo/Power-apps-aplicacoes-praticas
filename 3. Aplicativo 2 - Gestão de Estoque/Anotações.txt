@@ -38,4 +38,27 @@ AULA_3: Criando Sharepoint
             Aberto_por, Responsavel, Hora, Descrição
 
 
+AULA_4: Tela de Cadastro de Produtos
+
+    Nova tela:
+        Rotulo de texto - Cadastro Produtos;
+        Entrada:
+            Entrada de texto - Nome produto;
+            Camera - 
+            Botão - Cadastrar;
+                Função: Patch(Produtos; Default(Produtos);
+                    {Nome: TextInpot1.Text;
+                     Foto: Camera1.Photo;
+                     Qauntidade_estoque: 0}
+                );
+                Notify("Produto cadastrado com sucesso!")
+
+
+AULA_5: Personalizando Galeria
+
+    Nova tela:
+        Movimento de Estoque;
+        Galeria - Conecatar na base de dados;
+            Colunas a serem exibidas: ThisItem.'Nome' & " Qtd: " & hisItem.'Qauntidade_estoque';
+            Trocar icone por sinal de +;
 
