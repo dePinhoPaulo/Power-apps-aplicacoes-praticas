@@ -50,8 +50,8 @@ AULA_4: Tela de Cadastro de Produtos
                     {Nome: TextInpot1.Text;
                      Foto: Camera1.Photo;
                      Qauntidade_estoque: 0}
-                );
-                Notify("Produto cadastrado com sucesso!")
+                        );
+                        Notify("Produto cadastrado com sucesso!")
 
 
 AULA_5: Personalizando Galeria
@@ -62,3 +62,41 @@ AULA_5: Personalizando Galeria
             Colunas a serem exibidas: ThisItem.'Nome' & " Qtd: " & hisItem.'Qauntidade_estoque';
             Trocar icone por sinal de +;
 
+
+AULA_6: Configurando Pop-up
+
+    Pop-up de aviso da Movimentação:
+        Visible - Formula: var_produto_selecionado
+        Container:
+            2 Entrada de texto:
+                Quantidade;
+                Tipo;
+            Imagem;
+                Formula: Gallery.Selected.Foto
+            Botão Cadastro;
+    Botão de acesso a movimentação:
+        Onselect - Formula: UpdateContext({var_produto_selecionado})
+
+    Botão de fechar a movimentação:
+        Onselect - Formula: UpdateContext({var_produto_selecionado: False})
+
+
+AULA_7: Configurando Patch
+
+    Pop-up de aviso da Movimentação:
+        Botão Cadastro;
+            Formula: Patch(Movimentação; Default(Movimentação);
+                        {ID_produto: Gallery.Selected.Id;
+                        Qauntidade: Value(txt_quantidade.text);
+                        Tipo_movimentação: txt_tipo.text}
+                     );
+
+                     Patch(Produtos; LookUp(Produtos;ID = Gallery.Selected.Id);
+                        {Qauntidade: 
+                            If(txt_tipo.text = 'Entrada'; 
+                                Value(txt_quantidade.text) + Gallery.Selected.Qauntidade_estoque; 
+                                Value(txt_quantidade.text) - Gallery.Selected.Qauntidade_estoque
+                            )}
+                     );
+
+                     Notify("Movimentação cadastrada com sucesso!")
