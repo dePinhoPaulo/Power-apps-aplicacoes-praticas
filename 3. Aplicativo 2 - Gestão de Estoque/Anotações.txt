@@ -100,3 +100,56 @@ AULA_7: Configurando Patch
                      );
 
                      Notify("Movimentação cadastrada com sucesso!")
+
+
+AULA_8: Relatório de Estoque
+
+    Tela relatorio de estoque:
+        Lista de produtos:
+            Itens: Produto;
+            Value: Nome;
+        Imagem produto:
+            Formula: Dropdawn.Selected.Foto
+        Texto de quantidade:
+            Formula: "Em Estoque: " & Dropdawn.Selected.Qauntidade_estoque
+        Galeria com lista de movimentações:
+            Data: ThisItem.Criado;
+            Qauntidade: ThisItem.Quantidade;
+            Imagem: IF(ThisItem.Tela_Movimentação = "Entrada", Seta_verde, Seta_vermelha)
+        Filtrar lista atraves da item selecionado:
+            Galeria > Items > Formula
+                Formula: Filter(Movimentações, ID_produto = Dropdawn.Selected.Id)
+
+
+AULA_9: Reportar Problema
+
+    Tela reportar problema:
+        Lista de produtos;
+        Texto Descrição do problema;
+        Texto Email do responsavel;
+        Botão enviar:
+            Formula: Patch(Problemas, Default(Problemas),
+                        {Nome_Produto: Dropdawn.Selected.Nome
+                        Descrição: txt_descricao.Text,
+                        Responsavel: txt_responsavel.Text
+                        }),,
+                        Notify("Problema reportado com sucesso!")
+
+
+AULA_10: Configurando Conector do Gmail
+
+    Envio de email:
+        Adcionar Conector de Email;
+        Botão enviar:
+            Formula: Patch(Problemas, Default(Problemas),
+                        {Nome_Produto: Dropdawn.Selected.Nome
+                        Descrição: txt_descricao.Text,
+                        Responsavel: txt_responsavel.Text
+                        }),,
+
+                        Gmail.SendEmailV2(
+                            txt_responsavel.Text, 
+                            {Subject: "Novo probelma reportado", Boty: "Produto: " & Dropdawn.Selected.Nome & "Descrição: " & txt_descricao.Text} 
+                        ),,
+
+                        Notify("Problema reportado com sucesso!")
