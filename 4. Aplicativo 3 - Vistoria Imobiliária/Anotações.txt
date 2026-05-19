@@ -1,0 +1,35 @@
+AULA_1: Apresentação do App
+
+    Cadastro, edição de Funcionarios;
+    Cadastro da vistorias;
+    Envio de email com vistorias;
+
+
+AULA_2: Criando App e tela "carregando"
+
+    Tela de carregamento:
+        Escolhendo tema;
+        Logo;
+        Adcionar timer;
+            3 segundos.
+            OnTimeEnd: Navegate(Tela_inicial)
+
+
+AULA_3: Tela inicial com funcao User
+
+    Tela Inicial:
+        Imagem de fundo;
+        Imagem logo usuario:
+            Arredondar bordas;
+            Função: User().Image
+        Texto Nome e Texto Email:
+            Função: User().FullName
+            Alinhar do lado da Imagem
+        Botões do menu:
+            Funcionarios;
+                Navegate(Tela_funcionarios)
+            Imoveis;
+                Navegate(Tela_imoveis)
+            vistorias;
+                Navegate(Tela_vistorias)
+
