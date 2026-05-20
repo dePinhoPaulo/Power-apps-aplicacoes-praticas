@@ -33,3 +33,35 @@ AULA_3: Tela inicial com funcao User
             vistorias;
                 Navegate(Tela_vistorias)
 
+
+AULA_4: Criando Sharepoint
+
+    Criando base de dados (Sharepoint):
+        Lista Funcionarios:
+            Id, Nome, Email.
+        Lista Imovel:
+            Id, Tipo, Endereco, Numero, Cidade, UF, CEP, Latitude, Logitude, Endereco_Completo.
+        Lista Vistorias:
+            Id, Data, Id_Imovel, Id_Funcionario, Pintura_Avaliação, Pintura_Observação, Pintura_Foto, Pisos_Avaliação, Pisos_Observação, Pisos_Foto, Hidraulica_Avaliação, Hidraulica_Observação, Hidraulica_Foto, etc...
+
+
+AULA_5: Tela funcionarios - Novo funcionario
+
+    Tela Funcionario (cadastro novo usuario):
+        Tema;
+        Formulario:
+            Campo Texto: Nome;
+            Campo Texto: Email;
+            Botão preencher formulario: 
+                Formula: NewForm(Form2)
+            Botão submit Formulario: 
+                Formula: SubmitForm(Form2)
+    
+
+AULA_6: Tela funcionarios - Layout da tela
+
+    Tela Funcionario (lista de funcionarios):
+        Galeria com funcionarios cadastrados;
+            Editar galeria: Nome e Foto;
+        Botão de voltar;
+        
