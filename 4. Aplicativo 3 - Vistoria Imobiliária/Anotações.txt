@@ -64,4 +64,24 @@ AULA_6: Tela funcionarios - Layout da tela
         Galeria com funcionarios cadastrados;
             Editar galeria: Nome e Foto;
         Botão de voltar;
-        
+
+
+AULA_7: Tela funcionarios - Editar funcionários
+
+    Editar funcionarios:
+        Editar formulario atraves da seleção da galeria:
+            Iten da galeria: Select(Parent);; EditForm(Form2)
+
+
+AULA_8: Tela imoveis - Formulario e galeria
+
+    Tela de Imoveis:
+        Formulario: 
+            Fonte de dados: Imoveis:
+            Retirar: Altitude e longitude;
+        Botão submit Formulario: 
+                Formula: SubmitForm(form_imoveis);; NewForm(form_imoveis)
+        Geleria Vertical:
+            Titulo e Subtitulo;
+            Icone edição: Select(Parent);; EditForm(form_imoveis)
+    
