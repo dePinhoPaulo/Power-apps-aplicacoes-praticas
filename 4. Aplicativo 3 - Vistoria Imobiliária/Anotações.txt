@@ -85,3 +85,37 @@ AULA_8: Tela imoveis - Formulario e galeria
             Titulo e Subtitulo;
             Icone edição: Select(Parent);; EditForm(form_imoveis)
     
+
+AULA_9: Tela Imoveis - Aplicando conector Bing Mapas
+
+    Integar api de mapa bings:
+        Bing Maps Dev Center:
+            Criar nova chave;
+        Ajuste Botão submit:
+            Formula:    set(var_endereco; BingMaps.GetLocationByAdress({
+                            adressline: txt_endereco &" "& txt_numero;
+                            locality: txt_cidade;
+                            amdinDistrict: txt_uf;
+                            postalCode: txt_cep;
+                            conutryRegion: "BRA"
+                        }));;
+                        
+                        Patch(lista_imoveis; Defaults(lista_imoveis); {
+                            Tipo_Imovel: txt_tipo_imovel.Text;
+                            Endereco: txt_endereco.Text;
+                            Numero: txt_numero.Text;
+                            Cidade: txt_cidade.Text;
+                            UF: txt_uf.Text;
+                            CEP: txt_cep.Text;
+                            Latitude: var_endereco.point.cordinates.latitude
+                            Longitude:var_endereco.point.cordinates.longitude
+                            Endereco_Completo: var_endereco.address.formattedAddress
+                        });; 
+
+                        ResetForm(form_imoveis);;
+                        NewForm(form_imoveis);;
+        Imagem do mapa:
+            Formula: BingMaps.GetMapsV2("AerialWidthLabels";deslizante_zoom;gal_imoveis.Selected.Latitude;gal_imoveis.Selected.Longitude)
+        Controle Deslizante do Zoom:
+            Max e Min: 1 a 19;
+            Exibir valor: Off;
