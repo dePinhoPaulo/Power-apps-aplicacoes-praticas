@@ -119,3 +119,61 @@ AULA_9: Tela Imoveis - Aplicando conector Bing Mapas
         Controle Deslizante do Zoom:
             Max e Min: 1 a 19;
             Exibir valor: Off;
+
+
+AULA_10: Tela Imoveis - Finalizando tela imoveis
+
+    Galeria Imoveis:
+        Excluir item:
+            Selecionar 1° item;
+            Inserir icone de lixeira;
+            Função: removeIf(lista_imoveis, ID = gal_imoveis.Selected.ID)
+    
+    Adcionando ponto da localização no mapa:
+        Imagem do mapa:
+            Formula: 
+                BingMaps.GetMapsV2("AerialWidthLabels";deslizante_zoom;gal_imoveis.Selected.Latitude;gal_imoveis.Selected.Longitude
+                    {
+                        pushpinLatitude: gal_imoveis.Selected.Latitude;
+                        pushpinLongetude: gal_imoveis.Selected.longitude;
+                        pushpinIconStyle: 5
+                    }
+                )
+    
+    Editar Imovel da lista:
+        Adicionar Botão para Atualizar:
+            Formula:
+                set(var_endereco; BingMaps.GetLocationByAdress({
+                    adressline: txt_endereco &" "& txt_numero;
+                    locality: txt_cidade;
+                    amdinDistrict: txt_uf;
+                    postalCode: txt_cep;
+                    conutryRegion: "BRA"
+                }));;
+                
+                Patch(lista_imoveis; LoockUp(lista_imoveis; ID = gal_imoveis.Selected.ID); {
+                    Tipo_Imovel: txt_tipo_imovel.Text;
+                    Endereco: txt_endereco.Text;
+                    Numero: txt_numero.Text;
+                    Cidade: txt_cidade.Text;
+                    UF: txt_uf.Text;
+                    CEP: txt_cep.Text;
+                    Latitude: var_endereco.point.cordinates.latitude
+                    Longitude:var_endereco.point.cordinates.longitude
+                    Endereco_Completo: var_endereco.address.formattedAddress
+                });; 
+
+                ResetForm(form_imoveis);;
+                NewForm(form_imoveis);;
+
+    Modo de edição e criação, tela imoveis:
+        Botão adicionar novo imovel:
+            Formula: NewForm(Form2);; Set(var_modo_form='novo')
+        Botão editar imovel:
+            Select(Parent);; EditForm(Form2);; Set(var_modo_form='editar')
+        Alterar propriedade Visible:
+            Botão enviar novo cadatro: 
+                Visible: IF(var_modo_form="novo";true;false)
+            Botao enviar alteração cadastro:
+                Visible: IF(var_modo_form="Editar";true;false)
+
