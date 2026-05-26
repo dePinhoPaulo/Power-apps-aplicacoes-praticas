@@ -177,3 +177,38 @@ AULA_10: Tela Imoveis - Finalizando tela imoveis
             Botao enviar alteração cadastro:
                 Visible: IF(var_modo_form="Editar";true;false)
 
+
+AULA_11: Tela Vistoria
+
+    Tela de vistorias:
+        Menu Suspenso:
+            Value: Endereco;
+        Menu Suspenso:
+            Value: Nome Funcionario;
+        Seletor de Data;
+        
+        Pintura, Pisos, Hidraulica, Moveis:
+            Campo Classificação;
+            Campo Texto;
+            Campo Câmera;
+
+        Adicionar Botão para Enviar vistoria:
+            Formula:
+                Patch(lista_vistoria; Defaults(lista_vistoria); {
+                    Data_Vistoria: dt_vistoria.SelectedDate;
+                    Id_Funcionario: Drop_funcionario.SelectedText;
+                    Id_Imovel: drop_imovel.Selected.ID;
+                    Pintura_Avaliação: pint.Value;
+                    Pintura_Foto: pint.Photo;
+                    Pintura_Observação: pint.Text;
+                    Pisos_Avaliação: piso.Value;
+                    Pisos_Foto: piso.Photo
+                    Pisos_Observação: PISO.Text;
+                    Hidraulica_Avaliação: hid.Value;
+                    Hidraulica_Foto: hid.Photo;
+                    Hidraulica_Observação: hid.Text;
+                    Moveis_Avaliação: mov.Value;
+                    Moveis_Foto: mov.Photo
+                    Moveis_Observação: mov.Text;
+                });; 
+
