@@ -212,3 +212,19 @@ AULA_11: Tela Vistoria
                     Moveis_Observação: mov.Text;
                 });; 
 
+
+AULA_12: Enviando avaliações por e-mail
+
+    adicionar na formula do botão de envio:
+        Formula:
+            });;
+
+            Gmail.SendEmailV2(Drop_funcionario.Selected.Email;
+            {Subject: "Sua vistoria foi finalizada";
+            Body: "A vistoria do " & drop_imovel.Selected.Tipo_Imovel & "foi finalizada. A seguir alguns resultados: " &
+            "<BR>Pintura: nota " & aval_pintura.Value &
+            "<BR>Piso: nota " & aval_piso.Value &
+            "<BR>Hidraulica: nota " & aval_hidraulica.Value &
+            "<BR>Moveis: nota " & aval_movel.Value &});;
+            
+            Notify("Sua vistoria foi enviada!")
